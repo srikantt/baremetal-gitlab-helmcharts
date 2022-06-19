@@ -3,4 +3,5 @@ dependencies:
   version: '*.*.*'
   condition: global.praefect.enabled
 - name: gitlab-pages
+  version: '*.*.*'
   condition: global.pages.enabled
