@@ -1,5 +1,5 @@
 dependencies:
 - name: praefect
-  condition: global.praefect.enabled
+  condition: global.praefect.enabled=true
 - name: gitlab-pages
-  condition: global.pages.enabled
+  condition: global.pages.enabled=true
