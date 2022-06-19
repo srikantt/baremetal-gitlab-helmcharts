@@ -1,8 +1,6 @@
 dependencies:
 - name: gitlab
   version: '*.*.*'
-- name: praefect
-  version: '*.*.*'
 - name: certmanager-issuer
   version: '*.*.*'
 - name: minio
