@@ -52,6 +52,33 @@ entries:
     urls:
     - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/gitlab-6.0.3/gitlab-6.0.3.tgz
     version: 6.0.3
+  - apiVersion: v1
+    appVersion: master
+    created: "2022-06-19T12:08:45.569339072Z"
+    dependencies:
+    - condition: global.praefect.enabled
+      name: praefect
+      repository: ""
+      version: '*.*.*'
+    - condition: global.pages.enabled
+      name: gitlab-pages
+      repository: ""
+      version: '*.*.*'
+    description: Web-based Git-repository manager with wiki and issue-tracking features.
+    digest: d300a2d4d8716dba6052f912f06978c1088effc91f73eb70b0eb1b1cc83ba52f
+    home: https://about.gitlab.com/
+    icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
+    keywords:
+    - gitlab
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: gitlab
+    sources:
+    - https://gitlab.com/gitlab-org/charts/gitlab
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/gitlab-0.1.0/gitlab-0.1.0.tgz
+    version: 0.1.0
   minio:
   - apiVersion: v1
     appVersion: RELEASE.2017-12-28T01-21-00Z
@@ -127,4 +154,4 @@ entries:
     urls:
     - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/registry-0.7.0/registry-0.7.0.tgz
     version: 0.7.0
-generated: "2022-06-19T10:37:30.895159097Z"
+generated: "2022-06-19T12:08:45.569357473Z"
