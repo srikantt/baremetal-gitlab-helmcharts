@@ -1,0 +1,157 @@
+apiVersion: v1
+entries:
+  certmanager-issuer:
+  - apiVersion: v1
+    appVersion: 0.2.2
+    created: "2022-06-19T10:37:30.417453609Z"
+    description: Configuration Job to add LetsEncrypt Issuer to cert-manager
+    digest: b1d142327f041cf678b855bba2e8842072b5e9808b83fc0a2a8221ae87a6053a
+    home: https://about.gitlab.com/
+    icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
+    keywords:
+    - gitlab
+    - cert-manager
+    - tls
+    - letsencrypt
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: certmanager-issuer
+    sources:
+    - https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/certmanager-issuer
+    - https://gitlab.com/gitlab-org/build/CNG/tree/master/kubectl
+    - https://github.com/jetstack/cert-manager
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/certmanager-issuer-0.1.0/certmanager-issuer-0.1.0.tgz
+    version: 0.1.0
+  gitlab:
+  - apiVersion: v1
+    appVersion: master
+    created: "2022-06-19T10:37:30.564167572Z"
+    dependencies:
+    - condition: global.praefect.enabled
+      name: praefect
+      repository: ""
+      version: '*.*.*'
+    - condition: global.pages.enabled
+      name: gitlab-pages
+      repository: ""
+      version: '*.*.*'
+    description: Web-based Git-repository manager with wiki and issue-tracking features.
+    digest: 311e59ea39551d77d1053e634cd821a172249ef2d0a29cf45afe5be474d6530f
+    home: https://about.gitlab.com/
+    icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
+    keywords:
+    - gitlab
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: gitlab
+    sources:
+    - https://gitlab.com/gitlab-org/charts/gitlab
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/gitlab-6.0.3/gitlab-6.0.3.tgz
+    version: 6.0.3
+  - apiVersion: v1
+    appVersion: master
+    created: "2022-06-19T12:08:45.569339072Z"
+    dependencies:
+    - condition: global.praefect.enabled
+      name: praefect
+      repository: ""
+      version: '*.*.*'
+    - condition: global.pages.enabled
+      name: gitlab-pages
+      repository: ""
+      version: '*.*.*'
+    description: Web-based Git-repository manager with wiki and issue-tracking features.
+    digest: d300a2d4d8716dba6052f912f06978c1088effc91f73eb70b0eb1b1cc83ba52f
+    home: https://about.gitlab.com/
+    icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
+    keywords:
+    - gitlab
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: gitlab
+    sources:
+    - https://gitlab.com/gitlab-org/charts/gitlab
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/gitlab-0.1.0/gitlab-0.1.0.tgz
+    version: 0.1.0
+  minio:
+  - apiVersion: v1
+    appVersion: RELEASE.2017-12-28T01-21-00Z
+    created: "2022-06-19T10:37:30.668604238Z"
+    description: Object storage server built for cloud applications and devops.
+    digest: 3ff0298d3cc807a2389d9437522ec4185594e84beaf0c97800e25da2749fd4a0
+    home: https://minio.io
+    icon: https://www.minio.io/img/logo_160x160.png
+    keywords:
+    - S3
+    - gitlab
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: minio
+    sources:
+    - https://gitlab.com/gitlab-org/charts/gitlab/charts/minio
+    - https://github.com/minio/minio
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/minio-0.4.3/minio-0.4.3.tgz
+    version: 0.4.3
+  nginx-ingress:
+  - annotations:
+      artifacthub.io/changes: |
+        - Disable builtin ssl_session_cache
+        - Print warning only instead of error if no IngressClass permission is available
+        - Bump internal libraries versions
+        - Fix documentations
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.4
+    created: "2022-06-19T10:37:30.788283776Z"
+    description: Ingress controller for Kubernetes using NGINX as a reverse proxy
+      and load balancer
+    digest: e5e26690b57e2bcacbca987e4a9b98fbc4d85a9c82b4869a003fb309890718a4
+    home: https://github.com/kubernetes/ingress-nginx
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
+    keywords:
+    - ingress
+    - nginx
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - name: ChiefAlexander
+    name: nginx-ingress
+    sources:
+    - https://github.com/kubernetes/ingress-nginx
+    - https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx-ingress
+    type: application
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/nginx-ingress-4.0.6/nginx-ingress-4.0.6.tgz
+    version: 4.0.6
+  registry:
+  - apiVersion: v1
+    appVersion: v3.48.0-gitlab
+    created: "2022-06-19T10:37:30.895153096Z"
+    description: Stateless, highly scalable application that stores and lets you distribute
+      container images
+    digest: dfe175fe6cbedd1c9836a01ed57532f6b83952fec77271475af8ee714a155305
+    home: https://docs.gitlab.com/ee/user/packages/container_registry
+    icon: https://hub.docker.com/public/images/logos/mini-logo.svg
+    keywords:
+    - registry
+    - container
+    - docker
+    - gitlab
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    name: registry
+    sources:
+    - https://gitlab.com/gitlab-org/container-registry
+    - https://gitlab.com/gitlab-org/charts/gitlab/charts/registry
+    urls:
+    - https://github.com/srikantt/baremetal-gitlab-helmcharts/releases/download/registry-0.7.0/registry-0.7.0.tgz
+    version: 0.7.0
+generated: "2022-06-19T12:08:45.569357473Z"
